@@ -1,0 +1,163 @@
+<!-- templates/frontend/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'frontend:home' %}">dosro pana</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto ms-4">
+          <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
+        </ul>
+        <form class="d-flex mx-auto w-50">
+          <input class="form-control me-2" type="search" placeholder="What do you want to read?">
+          <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="d-flex align-items-center">
+          <i class="fa-regular fa-moon mx-2"></i>
+          <i class="fa-solid fa-cart-shopping mx-2"></i>
+          <a href="#" class="mx-2 text-decoration-none">Login</a>
+          <span class="mx-2">$ USD</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Banner -->
+  <div class="container">
+    <div class="banner mt-4">
+      <div class="arrow-btn"><i class="fa-solid fa-chevron-left"></i></div>
+      <div class="banner-text">
+        <p>From The #1 Bestselling Author</p>
+        <h2>THE PSYCHOLOGY OF MONEY</h2>
+      </div>
+      <img src="https://m.media-amazon.com/images/I/71aG+xDKSYL.jpg" alt="The Psychology of Money">
+      <div class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></div>
+    </div>
+  </div>
+
+  <!-- Genres -->
+  <div class="container mt-5">
+    <h3 class="fw-bold">Genres</h3>
+    <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
+    <div class="row text-center mt-4">
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-palette genre-icon text-danger"></i>
+        <p>Arts & Photography</p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-box-open genre-icon text-warning"></i>
+        <p>Boxed Sets</p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-briefcase genre-icon text-primary"></i>
+        <p>Business and Investing</p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-masks-theater genre-icon text-info"></i>
+        <p>Fiction and Literature</p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-globe genre-icon text-success"></i>
+        <p>Foreign Languages</p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <i class="fa-solid fa-book-open genre-icon text-secondary"></i>
+        <p>History, Biography, Memoir</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Best Sellers -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="fw-bold">Best Sellers</h3>
+      <a href="#" class="text-decoration-none">Show All</a>
+    </div>
+    <div class="row">
+      <!-- Book Cards -->
+      {% for book in best_sellers %}
+      <div class="col-md-3 col-lg-2 book-card">
+        <img src="{{ book.image_url }}" class="img-fluid" alt="{{ book.title }}">
+        <p class="book-title">{{ book.title }}</p>
+        <p class="book-author">by {{ book.author }}</p>
+        <p class="book-price">${{ book.price }}</p>
+        <button class="btn add-btn w-100">ADD TO CART</button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Used Books Banner -->
+  <div class="container">
+    <div class="used-books">
+      <div>
+        <h6><i class="fa-solid fa-tag text-success me-2"></i>Used Books Starting at Just $1.06</h6>
+        <p class="mb-0 text-secondary">Explore a Wide Range of Popular Used Books in Excellent Condition.</p>
+      </div>
+      <button class="btn btn-success">EXPLORE BOOKS</button>
+    </div>
+  </div>
+
+  <!-- New Arrivals -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="fw-bold">New Arrivals</h3>
+      <a href="#" class="text-decoration-none">Show All</a>
+    </div>
+    <div class="row">
+      <!-- Book Cards -->
+      {% for book in new_arrivals %}
+      <div class="col-md-3 col-lg-2 book-card">
+        <img src="{{ book.image_url }}" class="img-fluid" alt="{{ book.title }}">
+        <p class="book-title">{{ book.title }}</p>
+        <p class="book-author">by {{ book.author }}</p>
+        <p class="book-price">${{ book.price }}</p>
+        <button class="btn add-btn w-100">ADD TO CART</button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-3">
+          <h6>About</h6>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="col-md-3">
+          <h6>Support</h6>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="col-md-3">
+          <h6>Legal</h6>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+        <div class="col-md-3">
+          <h6>Follow</h6>
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <small>© 2025 Dosro pana. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

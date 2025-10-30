@@ -1,0 +1,129 @@
+/* static/css/style.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav-link {
+  color: #000 !important;
+  font-weight: 500;
+}
+
+/* Banner */
+.banner {
+  background-color: #c6f0e7;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.banner-text h2 {
+  font-weight: 700;
+  color: #111;
+}
+
+.banner img {
+  max-height: 200px;
+  border-radius: 8px;
+}
+
+.arrow-btn {
+  background: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Genres */
+.genre-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Cards */
+.book-card img {
+  border-radius: 10px;
+}
+
+.book-card {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.book-title {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.book-author {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.book-price {
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.add-btn {
+  border: 1px solid #c6f0e7;
+  color: #111;
+}
+
+.add-btn:hover {
+  background-color: #c6f0e7;
+}
+
+/* Used Books Banner */
+.used-books {
+  background: #f7fdfd;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.used-books h6 {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Footer */
+footer {
+  background: #f8f9fa;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+footer h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
